@@ -40,7 +40,7 @@ export async function sendMessage(message: string): Promise<string> {
       `${BASE_URL}/chat/chatDomain`,
       {
         room_id: currentConversationId,
-        message: message,
+        query: message,
       }
     );
 
