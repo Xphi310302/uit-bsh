@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, X, RefreshCw } from "lucide-react";
 import {
-  Message,
   sendMessage,
   initializeNewConversation,
 } from "../../services/chatbot/api.ts";
+
+import type { Message } from "../../services/chatbot/api.ts";
 import ChatMessage from "./ChatMessage.tsx";
 import ChatInput from "./ChatInput.tsx";
 
@@ -14,7 +15,7 @@ export default function ChatBot() {
     {
       role: "assistant",
       content:
-        "Xin chào! Tôi là Civic Bot. Rất vui được hỗ trợ bạn với các thủ tục hành chính công. Bạn cần giúp đỡ gì ạ?",
+        "Xin chào! Tôi là UIT PostGrad Assistant. Rất vui được hỗ trợ bạn về đào tạo sau đại học. Bạn cần giúp đỡ gì ạ?",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +69,7 @@ export default function ChatBot() {
       {
         role: "assistant",
         content:
-          "Xin chào! Tôi là Civic Bot. Rất vui được hỗ trợ bạn với các thủ tục hành chính công. Bạn cần giúp đỡ gì ạ?",
+          "Xin chào! Tôi là UIT PostGrad Assistant. Rất vui được hỗ trợ bạn với các câu hỏi về đào tạo sau đại học. Bạn cần giúp đỡ gì ạ?",
       },
     ]);
     setIsLoading(false);
@@ -86,7 +87,7 @@ export default function ChatBot() {
           <div className="bg-green-600 p-4 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center space-x-2 text-white font-inter">
               <Bot size={24} />
-              <span className="font-semibold">Civic Bot</span>
+              <span className="font-semibold">UIT PostGrad Assistant</span>
             </div>
             <div className="flex items-center space-x-2">
               <button

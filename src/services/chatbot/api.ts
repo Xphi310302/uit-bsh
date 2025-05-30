@@ -1,5 +1,5 @@
 import axios from "axios";
-import { publicAxiosInstance } from '../axios-config';
+// import { publicAxiosInstance } from '../axios-config';
 import { v4 as uuidv4 } from 'uuid'; 
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL; // Replace with your actual backend URL
@@ -35,7 +35,7 @@ export async function sendMessage(message: string): Promise<string> {
     }
 
     console.log('Sending message:', message, 'with conversation ID:', currentConversationId);
-    const response = await publicAxiosInstance.post<ChatResponse>(
+    const response = await axios.post<ChatResponse>(
       `/api/v1/chat`,
       {
         conversation_id: currentConversationId,

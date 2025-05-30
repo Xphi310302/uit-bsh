@@ -1,4 +1,4 @@
-import { Message } from "../../services/chatbot/api";
+import type { Message } from "../../services/chatbot/api.ts";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import React from "react";

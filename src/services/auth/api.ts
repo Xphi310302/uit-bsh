@@ -20,7 +20,7 @@ interface ErrorResponse {
 export const login = async (credentials: LoginCredentials): Promise<AuthResponse> => {
   try {
     const response = await axios.post<AuthResponse | ErrorResponse>(`${API_URL}/api/v1/login`, credentials);
-    
+
     if ('detail' in response.data) {
       const errorData = response.data as ErrorResponse;
       if (errorData.detail === 'Invalid password') {
